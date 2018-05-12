@@ -9,6 +9,7 @@ export class Main extends Component{
 
             <div>
                 <Header/>
+
                 <Footer/>
             </div>
         );

@@ -9,8 +9,8 @@ import App from './App';
 import Register from './layouts/register';
 import {Main} from "./layouts/main";
 import registerServiceWorker from './registerServiceWorker';
-import Table from "./components/table";
 import {StaffList} from "./layouts/staffList";
+import {PositionList, positionList} from "./layouts/positionList";
 
 
 ReactDOM.render((
@@ -20,6 +20,7 @@ ReactDOM.render((
             <Route path="/register" component={Register}/>
             <Route exact path={'/main'} component={Main}/>
             <Route exact path={'/staffList'} component={StaffList}/>
+            <Route exact path={'/positionList'} component={PositionList}/>
         </div>
     </BrowserRouter>
 

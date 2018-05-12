@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
-import ReactRouterDOM,{BrowserRouter,a} from 'react-router-dom';
-import '../css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../css/style.css';
+
 
 export class Footer extends Component{
 
@@ -12,7 +12,7 @@ export class Footer extends Component{
                 <div className="footer">
                     <div className="container">
                         <div className="footer-top">
-                            <div className="col-md-3 footer-top-left ftr-one">
+                            <div className="col-md-3 footer-top-left ftr-one" style={{float:'left',paddingTop:'20px'}}>
                                 <ul>
                                     <li><a href={'#'}>Home</a></li>
                                     <li><a href={'#'}>Services</a>  </li>
@@ -24,14 +24,14 @@ export class Footer extends Component{
                                     <li><a href={'#'}>Student Plans</a></li>
                                 </ul>
                             </div>
-                            <div className="col-md-3 footer-top-left ftr-two">
+                            <div className="col-md-3 footer-top-left ftr-two" style={{float:'left',paddingTop:'20px'}}>
                                 <ul>
                                     <li><a href={'#'}>Privacy Policy</a></li>
                                     <li><a href={'#'}>Terms of Use</a></li>
                                     <li><a href={'#'}>Disclaimer</a></li>
                                 </ul>
                             </div>
-                            <div className="col-md-3 footer-top-left ftr-tre">
+                            <div className="col-md-3 footer-top-left ftr-tre" style={{float:'left',paddingTop:'20px'}}>
                                 <ul>
                                     <li><a href={'#'}>Facebook</a></li>
                                     <li><a href={'#'}>Twitter</a></li>
@@ -39,7 +39,7 @@ export class Footer extends Component{
                                     <li><a href={'#'}>Our Blog</a></li>
                                 </ul>
                             </div>
-                            <div className="col-md-3 footer-top-left">
+                            <div className="col-md-3 footer-top-left" style={{float:'left',paddingTop:'20px'}}>
                                 <p>000.123.4567</p>
                                 <a>info@antivirus.com</a>
                             </div>

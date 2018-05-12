@@ -31,7 +31,7 @@ export class Header extends Component{
                                 <ul className="navig">
                                     <li><NavLink to={'main'} className="active" activeStyle={'color:#fff'}>首页</NavLink></li>
                                     <li><NavLink to={'staffList'} activeClassName="active">职员列表</NavLink></li>
-                                    <li><NavLink to={'register'}  activeClassName="active">职位列表</NavLink></li>
+                                    <li><NavLink to={'positionList'}  activeClassName="active">职位列表</NavLink></li>
                                     <li><NavLink to={'register'}  activeClassName="active">部门列表</NavLink></li>
                                     <li><NavLink to={'register'}  activeClassName="active">角色表</NavLink></li>
                                 </ul>
@@ -47,7 +47,7 @@ export class Header extends Component{
                 });
             });
             </script>*/
-        
+
 
 
 
