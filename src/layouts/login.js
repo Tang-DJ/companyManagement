@@ -18,17 +18,18 @@ export class InputFiled extends Component{
     handleSubmit(event) {
         event.preventDefault();
         let data = {
-            name: this.state.name,
-            password: this.state.password
+            userAccount: this.state.name,
+            passwrod: this.state.password
         };
         console.log(data);
-        fetch("/users/new", {
+        fetch("/login", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            params:JSON.stringify(data)
         }).then(function(response) {
             if (response.status >= 400) {
-                BrowserRouter.push('/home');
+                BrowserRouter.push('/main');
                 /*throw new Error("Bad response from server");*/
             }
             return response.json();

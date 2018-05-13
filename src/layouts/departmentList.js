@@ -3,7 +3,6 @@ import Header from '../components/header'
 import Footer from "../components/footer";
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-
 const selectRowProp = {
     mode: 'checkbox',
     bgColor: '#E0FFFF'
@@ -23,7 +22,8 @@ const options = {
     handleConfirmDeleteRow: customConfirm
 };
 
-export class StaffList extends Component{
+export class DepartmentList extends Component{
+
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ export class StaffList extends Component{
         };
     }
     async componentDidMount(){
-        fetch("/users", {
+        fetch("/department", {
             method: 'get',
             headers: {'Content-Type': 'application/json'}
         }).then(function(response) {
@@ -41,12 +41,12 @@ export class StaffList extends Component{
             if(data.code === 200){
                 console.log(data.result);
                 this.setState({products: data.result});
-                // products=data.result;
             }
         }).catch(function(err) {
             console.log(err);
         });
     }
+
     render(){
 
         return(
@@ -56,17 +56,17 @@ export class StaffList extends Component{
                 <div className="services">
                     <div className="container">
                         <div className="services-main">
-                            <h3>职员列表</h3>
+                            <h3>部门列表</h3>
                             <div className="services-top">
+
                                 <BootstrapTable hover deleteRow={ true } selectRow={ selectRowProp } options={ options }  insertRow={ true }  search
                                                 data={ this.state.products }
                                                 pagination>
-                                    <TableHeaderColumn dataField='userId' isKey={ true }>用户编号</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='userAccount'>用户账户</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='password'>用户密码</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='roleId'>用户角色</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='departmentId' isKey={ true }>职位编号</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='departmentName'>职位</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='departmentInfo'>职位信息</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='createTime'>创建时间</TableHeaderColumn>
                                 </BootstrapTable>
-
                             </div>
                         </div>
                     </div>

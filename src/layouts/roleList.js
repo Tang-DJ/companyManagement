@@ -23,7 +23,7 @@ const options = {
     handleConfirmDeleteRow: customConfirm
 };
 
-export class StaffList extends Component{
+export class RoleList extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ export class StaffList extends Component{
         };
     }
     async componentDidMount(){
-        fetch("/users", {
+        fetch("/role", {
             method: 'get',
             headers: {'Content-Type': 'application/json'}
         }).then(function(response) {
@@ -56,15 +56,14 @@ export class StaffList extends Component{
                 <div className="services">
                     <div className="container">
                         <div className="services-main">
-                            <h3>职员列表</h3>
+                            <h3>角色列表</h3>
                             <div className="services-top">
                                 <BootstrapTable hover deleteRow={ true } selectRow={ selectRowProp } options={ options }  insertRow={ true }  search
                                                 data={ this.state.products }
                                                 pagination>
-                                    <TableHeaderColumn dataField='userId' isKey={ true }>用户编号</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='userAccount'>用户账户</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='password'>用户密码</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='roleId'>用户角色</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='roleId' isKey={ true }>角色编号</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='roleName'>角色名</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='roleInfo'>角色信息</TableHeaderColumn>
                                 </BootstrapTable>
 
                             </div>

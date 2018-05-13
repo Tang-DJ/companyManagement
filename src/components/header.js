@@ -29,11 +29,12 @@ export class Header extends Component{
                             <div className="nav-shadow">
                                 <span className="menu"></span>
                                 <ul className="navig">
-                                    <li><NavLink to={'main'} className="active" activeStyle={'color:#fff'}>首页</NavLink></li>
-                                    <li><NavLink to={'staffList'} activeClassName="active">职员列表</NavLink></li>
-                                    <li><NavLink to={'positionList'}  activeClassName="active">职位列表</NavLink></li>
-                                    <li><NavLink to={'register'}  activeClassName="active">部门列表</NavLink></li>
-                                    <li><NavLink to={'register'}  activeClassName="active">角色表</NavLink></li>
+                                    <li><NavLink exact to='/main' activeClassName="active">首页</NavLink></li>
+                                    <li><NavLink exact to='/staffList' activeClassName="active">职员列表</NavLink></li>
+                                    <li><NavLink exact to='/positionList'  activeClassName="active">职位列表</NavLink></li>
+                                    <li><NavLink exact to='/departmentList' activeClassName="active">部门列表</NavLink></li>
+                                    <li><NavLink exact to='/roleList' activeClassName="active">角色列表</NavLink></li>
+                                    <li><NavLink exact to='/' >退出登录</NavLink></li>
                                 </ul>
                             </div>
                         </div>
