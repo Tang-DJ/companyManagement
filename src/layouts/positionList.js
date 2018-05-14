@@ -3,6 +3,7 @@ import Header from '../components/header'
 import Footer from "../components/footer";
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {BrowserRouter} from "react-router-dom";
+import axios from "axios/index";
 
 const selectRowProp = {
     mode: 'checkbox',
@@ -32,20 +33,10 @@ export class PositionList extends Component{
         };
     }
     async componentDidMount(){
-        fetch("/position", {
-            method: 'get',
-            headers: {'Content-Type': 'application/json'}
-        }).then(function(response) {
-            return response.json();
-        }).then((data) =>{
-            console.log(data);
-            if(data.code === 200){
-                console.log(data.result);
-                this.setState({products: data.result});
-            }
-        }).catch(function(err) {
-            console.log(err);
-        });
+        axios.get('/position')
+            .then(res => {
+                this.setState({products: res.data.result});
+            });
     }
 
     render(){
