@@ -31,9 +31,7 @@ class InputFiled extends Component {
         }).then((data)=> {
             console.log(data);
             if (data.code === 200) {
-
                 this.setState({ redirect: true });
-
 
             } else {
                 window.alert("账户或密码输入错误！");
