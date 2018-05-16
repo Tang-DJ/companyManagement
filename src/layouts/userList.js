@@ -23,10 +23,8 @@ const options = {
     closeText: '关闭',
     handleConfirmDeleteRow: customConfirm
 };
-const cellEditProp = {
-    mode: 'dbclick'
-};
-export class StaffList extends Component{
+
+export class UserList extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -35,9 +33,8 @@ export class StaffList extends Component{
 
     }
     async componentDidMount(){
-        axios.get('/staff')
+        axios.get('/users')
             .then(res => {
-                console.log(res.data);
                 this.setState({products: res.data.result});
             });
     }
@@ -51,19 +48,14 @@ export class StaffList extends Component{
                 <div className="services">
                     <div className="container">
                         <div className="services-main">
-                            <h3>职员列表</h3>
+                            <h3>用户列表</h3>
                             <div className="services-top">
-
-                                <BootstrapTable hover deleteRow={ true } selectRow={ selectRowProp } options={ options }  insertRow={ true }  search cellEdit={ cellEditProp }
+                                <BootstrapTable hover deleteRow={ true } selectRow={ selectRowProp } options={ options }  insertRow={ true }  search
                                                 data={ this.state.products }
                                                 pagination>
-                                    <TableHeaderColumn dataField='staffId' isKey={ true }>职员编号</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='staffName'>职员姓名</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='staffSex'>性别</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='staffEducation'>学历</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='staffPhoneNumber'>电话</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='staffBirthday'>生日</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='staffHiredate'>入职日期</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='userId' isKey={ true }>用户编号</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='userAccount'>用户账户</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='password'>用户密码</TableHeaderColumn>
                                 </BootstrapTable>
 
                             </div>

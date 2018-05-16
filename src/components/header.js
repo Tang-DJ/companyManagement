@@ -1,7 +1,8 @@
 import React,{ Component }  from 'react';
 import ReactRouterDOM,{BrowserRouter,Link,NavLink} from 'react-router-dom';
 import '../css/style.css';
-
+import logo from '../images/logo.png'
+import msg from '../images/msg.png'
 
 export class Header extends Component{
 
@@ -14,12 +15,12 @@ export class Header extends Component{
                     <div className="header-mian">
                         <div className="head">
                             <div className="logo">
-                                <Link to={'main'}><img src="images/logo.png" alt="" /></Link>
+                                <Link to={'main'}><img src={logo} alt="" /></Link>
                             </div>
                             <div className="call">
                                 <ul>
-                                    <li><p>CALL 000.123.4567</p></li>
-                                    <li><p className="msg"><a href="#"><img src="images/msg.png" alt=""/></a></p></li>
+                                    <li><p>11503090124唐黛嘉</p></li>
+                                    <li><p className="msg"><a href="#"><img src={msg} alt=""/></a></p></li>
                                 </ul>
                             </div>
                             <div className="clearfix">
@@ -30,6 +31,7 @@ export class Header extends Component{
                                 <span className="menu"></span>
                                 <ul className="navig">
                                     <li><NavLink exact to='/main' activeClassName="active">首页</NavLink></li>
+                                    <li><NavLink exact to='/userList' activeClassName="active">用户列表</NavLink></li>
                                     <li><NavLink exact to='/staffList' activeClassName="active">职员列表</NavLink></li>
                                     <li><NavLink exact to='/positionList'  activeClassName="active">职位列表</NavLink></li>
                                     <li><NavLink exact to='/departmentList' activeClassName="active">部门列表</NavLink></li>
@@ -41,16 +43,6 @@ export class Header extends Component{
                     </div>
                 </div>
             </div>
-
-           /* <script>
-            $("span.menu").click(function(){
-                $(" ul.navig").slideToggle("slow" , function(){
-                });
-            });
-            </script>*/
-
-
-
 
 
         );
